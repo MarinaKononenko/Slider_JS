@@ -1,0 +1,185 @@
+/* Общие стили */
+body {
+    background-color: #131313;
+    margin-top: 100px;
+    color: white;
+    font-size: 14px;
+    line-height: 27px;
+}
+
+.container {
+    width: 1171px;
+    position: relative;
+    margin: auto;
+}
+
+/* Сетка */
+.content {
+    display: grid;
+    grid-template-areas: 
+    "blank nav"
+    "description image";
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+}
+
+/* Навигация */
+.nav {
+    grid-area: nav;
+}
+
+.nav > ul {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 0px;
+}
+
+.nav li {
+    list-style: none;
+    margin-right: 55px;
+    font-size: 14px;
+}
+
+.nav-item {
+   color: rgba(255, 255, 255, 0.3);
+   padding-bottom: 10px;
+   font-family: "Yeseva One";
+   text-transform: uppercase;
+}
+
+.active {
+    border-bottom: 1px solid #E3B873;
+    color: #E3B873;
+}
+
+/* Изображение */
+.image {
+    grid-area: image;
+    padding-top: 30px;
+}
+
+/* Описание */
+.description {
+    grid-area: description;
+    width: 442px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    display: flex;
+    width: 253px;
+}
+
+.title {
+    color: #E3B873;
+    font-family: "Yeseva One";
+    text-transform: uppercase;
+}
+
+.title h1 {
+    display: inline-block;
+    font-size: 27px;
+    line-height: 37.42px;
+    font-weight: 400;
+}
+
+.title div {
+    position: relative;
+    top: 50px
+}
+
+.property {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Пагинация */
+.page {
+    display: flex;
+    margin-top: 60px;
+}
+
+.page_arrow {
+    margin-right: 20px;
+}
+
+.page_arrow_2 {
+    margin-left: 20px;
+}
+
+.choose {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Адаптивность */
+@media screen and (max-width: 767px) {
+    /* Скрываем стрелки слайдера */
+    .arrow-disable {
+        display: none;
+    }
+
+    /* Изменяем размер шрифта для навигации */
+    .nav li {
+        margin-right: 20px;
+        font-size: 12px;
+    }
+
+    /* Добавляем отступы для пагинации */
+    .page {
+        margin-top: 30px;
+    }
+
+    /* Изменяем размер иконок пагинации */
+    .choose {
+        font-size: 20px;
+    }
+
+    /* Скрываем название текущей страницы */
+    .title div {
+        display: none;
+    }
+
+    /* Изменяем размер шрифта для описания */
+    .description {
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    /* Изменяем размер шрифта для свойств комнаты */
+    .property div {
+        font-size: 12px;
+    }
+
+    /* Изменяем размер изображения */
+    .image_item {
+        width: 100%;
+    }
+
+    /* Добавляем отступы для навигации и пагинации */
+    .nav {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .page {
+        margin-bottom: 30px;
+    }
+
+    /* Добавляем класс point-small для пагинации */
+    .point-small {
+        font-size: 0;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin-right: 10px;
+    }
+
+    /* Добавляем класс arrow-small для стрелок слайдера */
+    .arrow-small {
+        display: none;
+    }
+}
